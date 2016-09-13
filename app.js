@@ -12,7 +12,8 @@ var tweets = require('./routes/tweets');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/mocha-test')
+
+mongoose.connect(process.env.CUSTOMCONNSTR_DBURL ||'mongodb://localhost/mocha-test');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
